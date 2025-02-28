@@ -7,5 +7,12 @@ services:
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  whisper-api:
+    build: ./whisper-api
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./whisper-api:/app
+      - /tmp:/tmp
 volumes:
   postgres_data:
