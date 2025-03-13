@@ -5,7 +5,7 @@ const env = require('./config/environment')
 const APIs_V1 = require('./routes/v1')
 const corsOptions = require('./config/cors')
 const errorHandlingMiddleware = require('./middleware/errorHandling')
-const { CONNECT_DB, CLOSE_DB } = require('./config/db/database')
+const { CONNECT_DB, CLOSE_DB } = require('./config/data/database')
 
 const START_SERVER = () => {
   const app = express()

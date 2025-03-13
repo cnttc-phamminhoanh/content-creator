@@ -8,6 +8,10 @@ const env = {
   APP_PORT: process.env.APP_PORT,
   APP_HOST: process.env.APP_HOST,
   BUILD_MODE: process.env.BUILD_MODE,
+  REDIS_HOST: process.env.REDIS_HOST,
+  REDIS_PORT: process.env.REDIS_PORT,
+  JWT_SECRET_ACCESS_TOKEN: process.env.JWT_SECRET_ACCESS_TOKEN,
+  JWT_SECRET_REFRESH_TOKEN: process.env.JWT_SECRET_REFRESH_TOKEN,
 }
 
 module.exports = env
