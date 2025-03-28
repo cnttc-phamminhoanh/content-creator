@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const HttpError = require('http-errors')
 const env = require('../config/environment')
 const redis = require('../config/data/redis')
@@ -39,7 +40,7 @@ const loginUserWithEmailPassword = async (email, password) => {
   const user = await userService.findUser({ email })
 
   if (!user) {
-    throw HttpError.NotFound('User not found')
+    throw HttpError.Unauthorized('Invalid credentials')
   }
 
   const isPasswordValid = await bcrypt.compare(password, user.password_hash)
