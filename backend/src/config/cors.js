@@ -5,7 +5,7 @@ const WHITELIST_DOMAINS = require('../utils/constants')
 
 const corsOptions = {
   origin: function (origin, callback) {
-    if (!origin && env.BUILD_MODE === 'dev') {
+    if (!origin && env.BUILD_MODE === 'development') {
       return callback(null, true)
     }
 

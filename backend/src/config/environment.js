@@ -1,3 +1,7 @@
+const buildMode = process.env.BUILD_MODE || 'development'
+
+require('dotenv').config({ path: __dirname + `/../../.env.backend.${buildMode}` })
+
 const env = {
   DB_TYPE: process.env.DB_TYPE,
   DB_PORT: process.env.DB_PORT,
