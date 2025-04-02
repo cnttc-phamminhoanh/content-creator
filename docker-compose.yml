@@ -35,10 +35,8 @@ services:
       - /tmp:/tmp
   backend:
     build: ./backend
-    env_file:
-      - .env
     ports:
-      - "5002:5000"
+      - "5002:5002"
     volumes:
       - ./backend:/app
       - /app/node_modules

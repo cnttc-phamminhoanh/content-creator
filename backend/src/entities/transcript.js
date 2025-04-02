@@ -1,5 +1,4 @@
 const EntitySchema = require('typeorm').EntitySchema
-const User = require('./user')
 
 const Transcript = new EntitySchema({
   name: 'Transcript',
@@ -8,22 +7,22 @@ const Transcript = new EntitySchema({
     transcript_id: {
       type: 'uuid',
       primary: true,
-      generated: 'uuid',
+      generated: 'uuid'
     },
     user_id: {
-      type: 'uuid',
+      type: 'uuid'
     },
     text: {
-      type: 'text',
+      type: 'text'
     },
     audio_url: {
       type: 'text',
-      nullable: true,
+      nullable: true
     },
     created_at: {
       type: 'timestamp',
-      default: () => 'CURRENT_TIMESTAMP',
-    },
+      default: () => 'CURRENT_TIMESTAMP'
+    }
   },
   relations: {
     users: {
@@ -31,11 +30,11 @@ const Transcript = new EntitySchema({
       target: 'User',
       inverseSide: 'transcript',
       joinColumn: {
-        name: 'user_id',
+        name: 'user_id'
       },
-      cascade: true,
-    },
-  },
+      cascade: true
+    }
+  }
 })
 
 module.exports = Transcript

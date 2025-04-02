@@ -8,10 +8,10 @@ const { userService } = require('./userService')
 const signupUser = async ({
   username,
   email,
-  password,
+  password
 }) => {
   const existingUserByEmail = await userService.findUser({ email })
-  
+
   if (existingUserByEmail) {
     throw HttpError.BadRequest('Email already exists')
   }
@@ -20,13 +20,13 @@ const signupUser = async ({
   if (existingUserByUsername) {
     throw HttpError.BadRequest('Username already exists')
   }
-  
+
   const hashedPassword = await bcrypt.hash(password, 10)
 
   const newUser = {
     username,
     email,
-    password_hash: hashedPassword,
+    password_hash: hashedPassword
   }
 
   const user = await userService.createUser(newUser)
@@ -58,5 +58,5 @@ const loginUserWithEmailPassword = async (email, password) => {
 
 module.exports.authService = {
   loginUserWithEmailPassword,
-  signupUser,
+  signupUser
 }

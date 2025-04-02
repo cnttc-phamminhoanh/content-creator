@@ -3,7 +3,7 @@ const config = {
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/config/',
-    '/migrations/',
+    '/migrations/'
   ],
   // globalSetup: './src/tests/setup/global.setup.js',
   setupFilesAfterEnv: ['./src/tests/setup/jest.setup.js'],

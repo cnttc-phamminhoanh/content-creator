@@ -5,12 +5,12 @@ const getMe = async (req, res, next) => {
     const user_id = '1234565'
 
     const user = await findUser({
-      user_id,
+      user_id
     })
 
     return res.status(200).json({
       message: 'Get me',
-      user,
+      user
     })
   } catch (error) {
     next(error)
@@ -18,5 +18,5 @@ const getMe = async (req, res, next) => {
 }
 
 module.exports.userController = {
-  getMe,
+  getMe
 }

@@ -12,7 +12,7 @@ const dataSource = new typeorm.DataSource({
   synchronize: false,
   logging: false,
   entities,
-  migrations: ['src/migration/**/*.js'],
+  migrations: ['src/migration/**/*.js']
 })
 
 module.exports = dataSource

@@ -6,7 +6,7 @@ const signupUser = async (req, res, next) => {
 
     return res.status(201).json({
       message: 'User registered successfully',
-      accessToken,
+      accessToken
     })
   } catch (error) {
     next(error)
@@ -21,7 +21,7 @@ const loginUserWithEmailPassword = async (req, res, next) => {
 
     return res.status(200).json({
       message: 'Login successful',
-      accessToken,
+      accessToken
     })
   } catch (error) {
     next(error)
@@ -30,5 +30,5 @@ const loginUserWithEmailPassword = async (req, res, next) => {
 
 module.exports.authController = {
   signupUser,
-  loginUserWithEmailPassword,
+  loginUserWithEmailPassword
 }

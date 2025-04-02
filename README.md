@@ -1,7 +1,17 @@
-# Tên Dự Án
-Content-Creator
-## Cài Đặt
-Cài đặt docker để chạy các service
-## Các lệnh thường dùng
+# Content-Creator
+## Requirement:
+- Install docker to start services
+## Build & start services:
+- Run command: `docker compose up --build -d`
+## Start backend service for development:
+- Your computer needs to install nodejs version 16 first
+- Move to backend directory: `cd ./backend`
+- Install libraries: `npm install`
+- Create *.env.backend.development* file in backend folder
+- Copy environment variables from *env.backend.development.example* file to *env.backend.development* file
+- Run command for start: `npm run start:dev`
+- Server running on: [http;//localhost:5002/api/v1](http://localhost:5002/v1/)
+## Common command:
 - Build & start services: `docker compose up --build -d`
 - Stop, remove container, remove network, remove volume: `docker compose down -v`
+- Start backend for development: `npm run start:dev`

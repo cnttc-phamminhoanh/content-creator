@@ -10,7 +10,7 @@ const setupTestDB = async () => {
   // Mock PostgreSQL functions
   db.public.registerFunction({
     name: 'current_timestamp',
-    implementation: () => new Date(),
+    implementation: () => new Date()
   })
 
   // Tạo TypeORM connection
@@ -31,5 +31,5 @@ const setupTestDB = async () => {
 }
 
 module.exports = {
-  setupTestDB,
+  setupTestDB
 }

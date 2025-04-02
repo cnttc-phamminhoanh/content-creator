@@ -1,6 +1,10 @@
+const path = require('path')
+
 const buildMode = process.env.BUILD_MODE || 'development'
 
-require('dotenv').config({ path: __dirname + `/../../.env.backend.${buildMode}` })
+require('dotenv').config({
+  path: path.join(__dirname, '..', '..', `.env.backend.${buildMode}`)
+})
 
 const env = {
   DB_TYPE: process.env.DB_TYPE,
@@ -16,7 +20,7 @@ const env = {
   REDIS_PORT: process.env.REDIS_PORT,
   REDIS_PASSWORD: process.env.REDIS_PASSWORD,
   JWT_SECRET_ACCESS_TOKEN: process.env.JWT_SECRET_ACCESS_TOKEN,
-  JWT_SECRET_REFRESH_TOKEN: process.env.JWT_SECRET_REFRESH_TOKEN,
+  JWT_SECRET_REFRESH_TOKEN: process.env.JWT_SECRET_REFRESH_TOKEN
 }
 
 module.exports = env

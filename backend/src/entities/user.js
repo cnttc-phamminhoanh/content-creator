@@ -7,34 +7,34 @@ const User = new EntitySchema({
     user_id: {
       type: 'uuid',
       primary: true,
-      generated: 'uuid',
+      generated: 'uuid'
     },
     username: {
       type: 'varchar',
       length: 50,
-      unique:true,
+      unique:true
     },
     email: {
       type: 'varchar',
       length: 100,
-      unique: true,
+      unique: true
     },
     password_hash: {
       type: 'varchar',
-      length: 255,
+      length: 255
     },
     created_at: {
       type: 'timestamp',
-      default: () => 'CURRENT_TIMESTAMP',
-    },
+      default: () => 'CURRENT_TIMESTAMP'
+    }
   },
   relations: {
     transcripts: {
       type: 'one-to-many',
       target: 'Transcript',
-      inverseSide: 'user',
-    },
-  },
+      inverseSide: 'user'
+    }
+  }
 })
 
 module.exports = User

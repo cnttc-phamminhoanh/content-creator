@@ -11,7 +11,7 @@ const redis = new Redis({
     }
     const delay = Math.min(times * 1000, 5000)
     return delay
-  },
+  }
 })
 
 module.exports = redis

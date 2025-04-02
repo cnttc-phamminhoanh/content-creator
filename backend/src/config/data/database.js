@@ -6,7 +6,7 @@ const CONNECT_DB = async () => {
   databaseInstall = await dataSource.initialize()
 }
 
-const GET_DB = async () => {
+const GET_DB = () => {
   if (!databaseInstall) {
     throw new Error('Must connect to Database first!')
   }
@@ -21,5 +21,5 @@ const CLOSE_DB = async () => {
 module.exports = {
   CONNECT_DB,
   GET_DB,
-  CLOSE_DB,
+  CLOSE_DB
 }

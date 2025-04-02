@@ -16,7 +16,7 @@ const corsOptions = {
     return callback(HttpError.Forbidden(`${origin} not allowed by our CORS Policy.`))
   },
   optionsSuccessStatus: 200,
-  credentials: true,
+  credentials: true
 }
 
 module.exports = corsOptions

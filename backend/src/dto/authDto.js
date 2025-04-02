@@ -7,7 +7,7 @@ const signupUserDto = Joi.object({
       .max(30)
       .pattern(new RegExp('^[a-zA-Z0-9]+$'))
       .message({
-        'string.pattern.base': 'Username cannot contain special characters',
+        'string.pattern.base': 'Username cannot contain special characters'
       })
       .required(),
     email: Joi.string()
@@ -20,15 +20,15 @@ const signupUserDto = Joi.object({
       .min(8)
       .pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+$'))
       .messages({
-        'string.pattern.base': 'Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character',
+        'string.pattern.base': 'Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character'
       })
       .required(),
     confirmPassword: Joi.string()
       .valid(Joi.ref('password'))
       .messages({
-        'any.only': 'Confirmation password does not match',
+        'any.only': 'Confirmation password does not match'
       })
-      .required(),
+      .required()
   })
 }).unknown(true)
 
@@ -41,11 +41,11 @@ const loginUserDto = Joi.object({
       })
       .required(),
     password: Joi.string()
-      .required(),
+      .required()
   })
 }).unknown(true)
 
 module.exports = {
   signupUserDto,
-  loginUserDto,
+  loginUserDto
 }

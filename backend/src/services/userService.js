@@ -1,4 +1,4 @@
-const User = require("../entities/user")
+const User = require('../entities/user')
 const dataSource = require('../config/data/dataSource')
 
 const userRepository = dataSource.getRepository(User)
@@ -6,34 +6,38 @@ const userRepository = dataSource.getRepository(User)
 const createUser = async ({
   username,
   email,
-  password_hash,
+  password_hash
 }) => {
   const user = {
     username,
     email,
-    password_hash,
+    password_hash
   }
 
-  return userRepository.save(user)
+  const newUser = await userRepository.save(user)
+
+  return newUser
 }
 
 const findUser = async ({
   user_id,
   username,
-  email,
+  email
 }) => {
   const query = {
     user_id,
     username,
-    email,
+    email
   }
 
-  return userRepository.findOne({
-    where: query,
+  const user = await userRepository.findOne({
+    where: query
   })
+
+  return user
 }
 
 module.exports.userService = {
   createUser,
-  findUser,
+  findUser
 }
