@@ -4,8 +4,8 @@ node_modules
 README.md
 .vscode
 .git
-.env
-.env.example
+.env.docker
+.env.docker.example
 .env.backend.development
 .env.backend.development.example
 .env.backend.test

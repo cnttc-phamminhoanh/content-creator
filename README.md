@@ -2,9 +2,11 @@
 ## Requirement:
 - Install docker to start services
 ## Build & start services:
-- Run command: `docker compose up --build -d`
+- Create *.env.docker* file at the same level as docker-compose.yml file
+- Copy environment variables from *env.docker.example* file to *.env.docker* file
+- Run command: `docker compose --env-file .env.docker up --build -d`
 ## Start backend service for development:
-- Your computer needs to install nodejs version 16 first
+- Your computer needs to install nodejs version 18 first
 - Move to backend directory: `cd ./backend`
 - Install libraries: `npm install`
 - Create *.env.backend.development* file in backend folder
