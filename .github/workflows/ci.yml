@@ -6,20 +6,32 @@ on:
     paths:
       - 'backend/**'
 
+env:
+  DOCKER_IMAGE_NAME: backend
+  NODE_VERSION: 18
+  DOCKER_BUILD_PLATFORMS: linux/amd64,linux/arm64
+
 jobs:
   lint-and-test:
     name: Lint & Test
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+        os: [ubuntu-latest]
 
     steps:
       - name: Checkout code for lint & test step
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
+          cache-dependency-path: ./backend/package-lock.json
 
       - name: Run ESLint (Backend)
         working-directory: ./backend
